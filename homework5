@@ -1,0 +1,7 @@
+immutable_var = 1, 2, 'tru4'
+print(immutable_var)
+# immutable_var.extend(["Pop"])
+#Это не сработает, ведь tuple - неизменяемая единица
+mutable_list = [1, True]
+mutable_list.extend ([True])
+print(mutable_list)
