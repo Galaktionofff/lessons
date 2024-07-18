@@ -1,0 +1,12 @@
+sb = {}
+s = 0
+a = 0
+grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]
+students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
+students = sorted(students)
+students = list(students)
+while s != len(grades):
+    a = sum(grades[s]) / len(grades[s])
+    sb.update([[students[s], a]])
+    s = s + 1
+print(sb)
