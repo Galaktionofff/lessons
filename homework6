@@ -1,0 +1,15 @@
+my_dict = {'skop': '123skop', 'skop1': '123skop1'}
+print(my_dict)
+print(my_dict.get('skop'))
+print(my_dict.get('skop2'))
+my_dict.update({'skop3': 123, 'skop4': 1234})
+x = my_dict.pop('skop')
+print(x)
+print(my_dict)
+
+my_set = {1, 2, 3, 3,}
+print(my_set)
+my_set.add(6)
+my_set.add(7)
+my_set.discard(6)
+print(my_set)
