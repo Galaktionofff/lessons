@@ -1,0 +1,20 @@
+x = int(input())
+result = []
+first_num = 0
+second_num = 0
+for i in range(1, 20):
+    if x % 2 != 0:
+        for k in range(1, ((x // 2) + 1)):
+            if x % (i + k) == 0:
+                first_num = i
+                second_num = k
+                result.append(first_num)
+                result.append(second_num)
+    else:
+        for k in range(1, x // 2):
+            if x % (i + k) == 0:
+                first_num = i
+                second_num = k
+                result.append(first_num)
+                result.append(second_num)
+print(result)
