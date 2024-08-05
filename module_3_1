@@ -1,0 +1,36 @@
+calls = 0
+
+
+def count_calls():
+    global calls
+    calls += 1
+
+
+def string_info(string):
+    x = len(string)
+    y = string.upper()
+    s = string.lower()
+    tup = (x, y, s)
+    print(tup)
+    count_calls()
+
+
+def is_contains(string, list_to_search):
+    x = len(list_to_search)
+    sim = string.lower()
+    for i in range(x):
+        if list_to_search[i] == string or list_to_search[i].lower() == 'urban' == sim:
+            f = True
+            print(f)
+            break
+        else:
+            f = False
+            continue
+    if f == False:
+        print(f)
+    count_calls()
+
+
+string_info(str(input()))
+is_contains(str(input()), ['ds', 'asa', 'dff', "Dff", 'urBan'])
+print(calls)
