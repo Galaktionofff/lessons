@@ -1,3 +1,24 @@
+def print_params(a=1, b="2", c=True):
+    print(a, b, c)
+
+
+print_params()
+
+
+def print_params(a=1, b=1,):
+    print(a, b)
+
+
+print_params()
+
+
+def print_params():             #Функция ничего не вернула, потому что не было аргументов
+
+
+print_params()
+
+
+
 def print_params(a=1, b=25, c=None):
     if c is None:
         c = [1, 2, 3]
