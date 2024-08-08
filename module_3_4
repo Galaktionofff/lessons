@@ -1,11 +1,11 @@
-def single_root_words(*other_words, root_word="if"):
+def single_root_words(*other_words, root_word='Disablement'):
     same_words = []
-    other_words = list(other_words)
+    other_words = other_words
     s = other_words
     for i in range(len(s)):
-        if root_word in s[i]:
+        if root_word.lower() in (s[i]).lower() or (s[i]).lower() in root_word.lower():
             same_words.append(s[i])
     print(same_words)
 
 
-single_root_words("fuyg", 'iuub', 'if', 'iftuo')
+single_root_words('Able', 'Mable', 'Disable', 'Bagel')
