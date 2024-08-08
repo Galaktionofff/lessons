@@ -1,0 +1,11 @@
+def single_root_words(*other_words, root_word="if"):
+    same_words = []
+    other_words = list(other_words)
+    s = other_words
+    for i in range(len(s)):
+        if root_word in s[i]:
+            same_words.append(s[i])
+    print(same_words)
+
+
+single_root_words("fuyg", 'iuub', 'if', 'iftuo')
