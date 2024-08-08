@@ -1,10 +1,6 @@
 def send_email(recipient, message, *, sender="university.help@gmail.com"):
-    sender = sender[::-1]
-    recipient = recipient[::-1]
-    if (("@" in recipient and '@' in sender) or (
-            recipient.find('moc.' or 'ur.' or 'ten.') == 0 and sender.find('moc.' or 'ur.' or 'ten.') == 0)):
-        sender = sender[::-1]
-        recipient = recipient[::-1]
+    if (("@" in recipient and '@' in sender) or
+            (recipient.endswith('.com' or '.ru' or '.net') and sender.endswith('.com' or '.ru' or '.net'))):
         if sender != recipient:
             if sender == "university.help@gmail.com":
                 print("Письмо успешно отправлено с адреса", sender, "на адрес", recipient)
