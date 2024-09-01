@@ -1,0 +1,131 @@
+users = []
+videos = []
+class UrTube:
+    def __init__(self):
+        global users
+        global videos
+        self.current_user = None
+        self.videos = videos
+
+    def __str__(self):
+        return (f'{self.users}')
+
+    def log_in(self, name, password):
+        self.name = name
+        self.password = password
+        global users
+        s1 = True
+        for i in range(len(users)):
+            lpa = users[i]
+            lp = lpa[0]
+            l = []
+            l.append(self.name)
+            p = []
+            p.append(self.password)
+            if l == list(lp.keys()) and p == list(lp.values()):
+                self.current_user = lpa
+                print("Вход успешно выполнен!")
+                s1 = True
+                break
+            else:
+                s1 = False
+                continue
+
+        if s1 == False:
+            print(f"пользователь {self.name} не найден")
+
+    def register(self, name, password, age):
+        global users
+        if name in users:
+            print(f'Пользователь {name} уже существует')
+        else:
+            User.__init__(self, name, password, age)
+
+    def log_out(self):
+        self.current_user = None
+
+    def add(self, *args):
+        global videos
+        for s in range(len(args)):
+            if args[s] not in videos:
+                videos.append(args[s])
+            else:
+                print('Такое видео уже существует')
+
+    def get_videos(self, title):
+        i = 0
+        while i <= len(videos):
+            v = videos[i]
+            i += 1
+            if title.lower() in v[0].lower():
+                print(str(v))
+            else:
+                print('Такого видео не существует')
+
+
+
+
+class User:
+    def __init__(self, name, password, age):
+        self.name = name
+        self.password = password
+        self.age = age
+        self.password = hash(self.password)
+        lp = {}
+        lp[name] = password
+        user = (lp, age)
+        global users
+        users.append(user)
+
+    def __str__(self):
+        return (f"Имя пользователя: {self.name}\nПароль: {self.password}\nВозраст: {self.age}")
+
+
+
+class Video:
+    def __init__(self, title, duration, adult_mode=False, time_now=0):
+        self.title = title
+        self.duration = duration
+        self.time_now = time_now
+        self.adult_mode = adult_mode
+
+
+    def __str__(self):
+        return (f'Название:{self.title}\nПродолжительность:{self.duration}\nВремя сейчас:{self.time_now}\n'
+                f'Возрастное ограничение:{self.adult_mode}')
+
+
+
+
+
+# V1 = Video("as", 12, 18)
+# print(V1)
+#
+# U1 = User('Nik', 123, 18)
+# U2 = User('Kate', 123456, 12)
+# UrTube1 = UrTube(U1, V1)
+# UrTube1.log_in('Kate', 123456)
+# UrTube1.register('Skip', 456, 67)
+#
+# print(users)
+# print(UrTube1.current_user)
+# UrTube1.log_out()
+# print(UrTube1.current_user)
+#
+# print(videos)
+# UrTube1.get_videos('as')
+
+ur = UrTube()
+v1 = Video('Лучший язык программирования 2024 года', 200)
+v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
+
+# Добавление видео
+ur.add(v1, v2)
+print(videos)
+
+
+# Проверка поиска
+# print(ur.get_videos('лучший'))
+# print(ur.get_videos('ПРОГ'))
+
+# print(U1)
