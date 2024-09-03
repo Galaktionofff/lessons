@@ -60,7 +60,7 @@ class UrTube:
 
     def get_videos(self, title):
         for i in range(len(videos)):
-            tit = Video.title
+            tit = v1.title
             if title.lower() == tit.lower():
                 print('Такое')
             else:
