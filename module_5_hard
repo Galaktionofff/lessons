@@ -47,18 +47,22 @@ class UrTube:
     def add(self, *args):
         global videos
         for s in range(len(args)):
-            if args[s] not in videos:
+            if len(videos) == 0:
                 videos.append(args[s])
-            else:
-                print('Такое видео уже существует')
+                continue
+            for i in range(len(videos)):
+                if args[s] == videos[i]:
+                    print('Такое видео уже существует')
+                    break
+                else:
+                     videos.append(args[s])
+                     break
 
     def get_videos(self, title):
-        i = 0
-        while i <= len(videos):
-            v = videos[i]
-            i += 1
-            if title.lower() in v[0].lower():
-                print(str(v))
+        for i in range(len(videos)):
+            tit = Video.title
+            if title.lower() == tit.lower():
+                print('Такое')
             else:
                 print('Такого видео не существует')
 
@@ -94,6 +98,8 @@ class Video:
         return (f'Название:{self.title}\nПродолжительность:{self.duration}\nВремя сейчас:{self.time_now}\n'
                 f'Возрастное ограничение:{self.adult_mode}')
 
+    def __repr__(self):
+        return self.title
 
 
 
@@ -121,7 +127,8 @@ v2 = Video('Для чего девушкам парень программист
 
 # Добавление видео
 ur.add(v1, v2)
-print(videos)
+ur.get_videos('Лучший язык программирования 2024 года')
+
 
 
 # Проверка поиска
