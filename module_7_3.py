@@ -29,10 +29,10 @@ class WordsFinder:
                 values = all_words[self.file_names[i]]
                 if values[val] == word:
                     find[self.file_names[i]]=val+1
-                    print(find)
                     break
                 else:
                     continue
+        return find
 
     def count(self, word):
         word = word.lower()
@@ -48,7 +48,7 @@ class WordsFinder:
                 else:
                     continue
             count[self.file_names[i]] = c
-            print(count)
+        return count
 
 finder2 = WordsFinder('test_file.txt')
 print(finder2.get_all_words())
