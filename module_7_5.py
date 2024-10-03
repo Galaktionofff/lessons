@@ -1,19 +1,8 @@
-import os
-
-print('Teкущая директория:', os.getcwd())
-if os.path.exists('module_71'):# Позволяет узнать, является ли предложенная директория текущей (Возвращает False или True)
-    os.chdir('module_71')# Меняет текущую директорию
-else:
-    os.mkdir('module_71')# Создает новую директорию
-    os.chdir('module_71')
-print('Teкущая директория:', os.getcwd())# Позволяет узнать текущую директория
-# os.makedirs('2/2')# позволяет создавать вложенные папки
-os.chdir('/Users/nikitagalaktionov/PycharmProjects/Urban/NameSpace/.venv/module_7')
-os.listdir()# Позволяет посмотреть файлы в текущей директории
-for i in os.walk('.'):# Позволяет осмотреть директорию, в том числе вложенные директории
+directory = os.getcwd()
+for i in os.walk('.'):
     print(i)
-file = [f for f in os.listdir() if os.path.isfile(f)]
-dirs = [d for d in os.listdir() if os.path.isdir(d)]
-print(dirs)
-print(file)
-os.startfile('/Users/nikitagalaktionov/PycharmProjects/Urban/NameSpace/.venv/module_7/f.txt', operation=open())
+print(os.path.join('/Users/nikitagalaktionov/PycharmProjects/Urban/NameSpace/module_7/module_7_2.py'))
+print(time.ctime(os.path.getmtime('module_7_1.py')))
+print(os.path.getsize('module_7_1.py'))
+print(os.path.dirname('/Users/nikitagalaktionov/PycharmProjects/Urban/NameSpace/module_7/module_7_1.py'))
+
