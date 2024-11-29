@@ -7,7 +7,7 @@ class TestTournament(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.all_results = []
+        cls.all_results = {}
 
     def setUp(self):
         self.runner = Ex.Runner('Усэйн', 10)
@@ -18,22 +18,22 @@ class TestTournament(unittest.TestCase):
     def tearDownClass(cls):
         pprint(cls.all_results)
 
-    def speed_run(self):
+    def test_speed_run(self):
         tour = Ex.Tournament(90, self.runner, self.runner2)
         t_s = tour.start()
-        self.all_results.append(t_s)
-        self.assertTrue(self.all_results[-1] == 'Ник')
+        self.all_results = t_s
+        self.assertTrue(self.all_results[2] == 'Ник')
 
-    def speed_run1(self):
+    def test_speed_run1(self):
         tour = Ex.Tournament(90, self.runner1, self.runner2)
         t_s = tour.start()
-        self.all_results.append(t_s)
-        self.assertTrue(self.all_results[-1] == 'Ник')
+        self.all_results = t_s
+        self.assertTrue(self.all_results[2] == 'Ник')
 
-    def speed_run2(self):
+    def test_speed_run2(self):
         tour = Ex.Tournament(90, self.runner, self.runner1, self.runner2)
         t_s = tour.start()
-        self.all_results.append(t_s)
-        self.assertTrue(self.all_results[-1] == 'Ник')
+        self.all_results = t_s
+        self.assertTrue(self.all_results[3] == 'Ник')
 
 test = TestTournament()
