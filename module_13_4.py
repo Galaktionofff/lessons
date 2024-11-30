@@ -44,24 +44,6 @@ async def send_calories(message, state):
     await state.finish()
 
 
-@dp.message_handler(text=['Urban', 'ff'])
-async def urban_message(message):
-    print('Urban message')
-
-
-@dp.message_handler(commands=['start'])
-async def start(message):
-    print('Привет! Я бот помогающий твоему здоровью.')
-    await message.answer('Привет! Я бот помогающий твоему здоровью.')
-
-"""Чтобы достать из отправленного боту сообщения текст нужно брать параметр текст
-message.text"""
-
-
-@dp.message_handler()
-async def all_message(message):
-    print('Введите команду /start, чтобы начать общение.')
-    await message.answer('Введите команду /start, чтобы начать общение.')
 
 
 if __name__ == '__main__':
