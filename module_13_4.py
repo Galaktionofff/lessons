@@ -8,6 +8,10 @@ api = ''
 bot = ai.Bot(token=api)
 dp = ai.Dispatcher(bot, storage=MemoryStorage())
 
+@dp.message_handler(commands=['start'])
+async def start(message):
+    print('Привет! Я бот помогающий твоему здоровью.')
+    await message.answer('Привет!  Я бот помогающий твоему здоровью.')
 
 class User_state(StatesGroup):
     age = State()
