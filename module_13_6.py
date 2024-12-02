@@ -54,8 +54,9 @@ class User_state(StatesGroup):
 
 
 @dp.callback_query_handler(text='calories')
-async def set_age(message):
-    await message.answer('Введите свой возраст')
+async def set_age(call):
+    await call.message.answer('Введите свой возраст')
+    await call.answer()
     await User_state.age.set()
 
 
