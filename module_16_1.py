@@ -31,4 +31,3 @@ async def users_id(user: str = 'Nik', age: int = 19):
     text = f'Информация о пользователе. Имя: {user}, Возраст: {age}'
     entext = text.encode("utf-8")
     return entext
-#Почему-то API не воспринимает кириллицу, я не знаю, что с этим делать
